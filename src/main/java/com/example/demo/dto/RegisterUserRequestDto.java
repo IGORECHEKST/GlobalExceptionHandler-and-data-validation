@@ -11,6 +11,7 @@ import lombok.AllArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class RegisterUserRequestDto {
+
     @NotBlank(message = "Email is mandatory and cannot be empty.")
     @Email(message = "Invalid email format.")
     private String email;

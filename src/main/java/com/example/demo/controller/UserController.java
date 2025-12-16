@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.dto.RegisterUserRequestDto;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -13,7 +14,8 @@ public class UserController {
 
     @PostMapping
     public ResponseEntity<String> createUser(
-            @RequestBody @Valid UserCreationDto userDto) {
-        return new ResponseEntity<>("User registered successfully!", HttpStatus.CREATED);
+
+            @RequestBody @Valid RegisterUserRequestDto userDto) {
+        return new ResponseEntity<>("User registered successfully and passed validation!", HttpStatus.CREATED);
     }
 }
