@@ -11,16 +11,15 @@ import lombok.AllArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class RegisterUserRequestDto {
-
-    @NotBlank(message = "Email є обов'язковим і не може бути порожнім.")
-    @Email(message = "Введено недійсний формат електронної пошти.")
+    @NotBlank(message = "Email is mandatory and cannot be empty.")
+    @Email(message = "Invalid email format.")
     private String email;
 
-    @NotBlank(message = "Пароль є обов'язковим.")
-    @Size(min = 8, max = 50, message = "Пароль повинен містити від 8 до 50 символів.")
+    @NotBlank(message = "Password is required.")
+    @Size(min = 8, max = 50, message = "Password must be between 8 and 50 characters.")
     private String password;
 
-    @NotBlank(message = "Ім'я є обов'язковим.")
-    @Size(max = 50, message = "Ім'я не може перевищувати 50 символів.")
+    @NotBlank(message = "First name is mandatory.")
+    @Size(max = 50, message = "First name cannot exceed 50 characters.")
     private String firstName;
 }
